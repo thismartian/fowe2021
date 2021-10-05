@@ -29,7 +29,7 @@ def calc_cf(n_wt, AEP_optimized) : return(100 * AEP_optimized/(10**6 * yearly_ca
 # Instantiate the FLORIS object
 file_dir = os.path.dirname(os.path.abspath(__file__))
 fi = wfct.floris_interface.FlorisInterface(
-    os.path.join(file_dir, "../../../example_input.json")
+    os.path.join(file_dir, "../../../../example_input.json")
 )
 
 n_wt = 4
@@ -125,6 +125,13 @@ for start in range(0, n_multistart):
     layout_opt.plot_layout_opt_results()
     plt.show()
     
+        
+    print("The initial AEP is:")
+    print(AEP_initial)
+    
+    print("The optimized AEP is:")
+    print(AEP_optimized)
+    
     
     print("The initial capacity factor for this layout is:")
     print(calc_cf(n_wt, AEP_initial))
@@ -132,3 +139,4 @@ for start in range(0, n_multistart):
     
     print("The optimized capacity factor for this layout is:")
     print(calc_cf(n_wt, AEP_optimized))
+
